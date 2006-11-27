@@ -1,7 +1,7 @@
 Summary:	Tools to manage the Linux NetLabel subsystem
 Name:		netlabel_tools
 Version:	0.17
-Release:	5%{?dist}
+Release:	0.1
 License:	GPL
 Group:		Daemons
 URL:		http://netlabel.sourceforge.net/
@@ -11,7 +11,7 @@ Source1:	%{name}.init
 Source2:	%{name}.rules
 Patch1:		%{name}-new-hdrs.patch
 Patch2:		%{name}.patch
-BuildRequires:	libnl-devel
+BuildRequires:	libnl-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,9 +37,8 @@ rm -rf $RPM_BUILD_ROOT
 	INSTALL_PREFIX=${RPM_BUILD_ROOT} \
 	INSTALL_MAN_DIR=${RPM_BUILD_ROOT}%{_mandir}
 
-install -d $RPM_BUILD_ROOT/etc/rc.d/init.d/
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/netlabel
-install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/
+install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/netlabel
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/netlabel.rules
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,5 +48,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/*.txt
 %attr(755,root,root) /sbin/*
 %attr(754,root,root) /etc/rc.d/init.d/netlabel
-%config(noreplace) %attr(640,root,root) %{_sysconfdir}/netlabel.rules
+%config(noreplace) %verify(not md5 mtime size) %attr(640,root,root) %{_sysconfdir}/netlabel.rules
 %{_mandir}/man?/*
