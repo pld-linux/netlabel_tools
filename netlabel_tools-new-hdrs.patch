@@ -12,7 +12,7 @@
  
  #
  # targets
-@@ -77,9 +78,9 @@ install: $(SUBDIRS)
+@@ -72,15 +73,15 @@ install: $(SUBDIRS)
  	@echo "INFO: installing files in $(INSTALL_PREFIX)"
  	@mkdir -p $(INSTALL_SBIN_DIR)
  	@mkdir -p $(INSTALL_MAN_DIR)/man8
@@ -23,4 +23,11 @@
 +	@install -m 644 docs/man/netlabelctl.8 \
  	 $(INSTALL_MAN_DIR)/man8
  
- clean:
+ $(VERSION_HDR): version_info
+ 	@echo "INFO: creating the version header file"
+ 	@hdr="$(VERSION_HDR)"; \
+-	. version_info; \
++	. ./version_info; \
+ 	echo "/* automatically generated - do not edit */" > $$hdr; \
+ 	echo "#ifndef _VERSION_H" >> $$hdr; \
+ 	echo "#define _VERSION_H" >> $$hdr; \
