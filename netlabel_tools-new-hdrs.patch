@@ -1,0 +1,26 @@
+--- netlabel_tools-0.16-orig/Makefile	2006-06-27 13:06:28.000000000 -0400
++++ netlabel_tools-0.16/Makefile	2006-08-29 16:42:09.000000000 -0400
+@@ -43,8 +43,9 @@ INSTALL_SBIN_DIR = $(INSTALL_PREFIX)/sbi
+ INSTALL_BIN_DIR = $(INSTALL_PREFIX)/bin
+ INSTALL_MAN_DIR = $(INSTALL_PREFIX)/share/man
+ 
+-OWNER = root
+-GROUP = root
++# Mock doesn't allow this.
++#OWNER = root
++#GROUP = root
+ 
+ #
+ # targets
+@@ -77,9 +78,9 @@ install: $(SUBDIRS)
+ 	@echo "INFO: installing files in $(INSTALL_PREFIX)"
+ 	@mkdir -p $(INSTALL_SBIN_DIR)
+ 	@mkdir -p $(INSTALL_MAN_DIR)/man8
+-	@install -o $(OWNER) -g $(GROUP) -m 755 netlabelctl/netlabelctl \
++	@install -m 755 netlabelctl/netlabelctl \
+ 	 $(INSTALL_SBIN_DIR)/netlabelctl
+-	@install -o $(OWNER) -g $(GROUP) -m 644 docs/man/netlabelctl.8 \
++	@install -m 644 docs/man/netlabelctl.8 \
+ 	 $(INSTALL_MAN_DIR)/man8
+ 
+ clean:

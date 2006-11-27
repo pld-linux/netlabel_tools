@@ -1,0 +1,9 @@
+# This file contains the rules for the Netlabel subsystem
+# Each line contains just the arguments to the netlabel command
+
+# creates a CIPSO/IPv4 definition using a DOI value of 1
+cipsov4 add std doi:1 tags:1 levels:0=0,1=1,2=2 categories:0=0,1=1,2=2
+
+# tell the NetLabel system to use this CIPSO/IPv4 defintion by default
+mgmt add default protocol:cipsov4,1
+

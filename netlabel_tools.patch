@@ -1,0 +1,29 @@
+Index: netlabelctl/cipsov4.c
+===================================================================
+--- netlabelctl/cipsov4.c	(revision 27)
++++ netlabelctl/cipsov4.c	(revision 28)
+@@ -236,7 +236,7 @@
+ 	printf("STANDARD");
+ 	break;
+       case CIPSO_V4_MAP_PASS:
+-	printf("PASS_THROUGH\n");
++	printf("PASS_THROUGH");
+ 	break;
+       default:
+ 	printf("UNKNOWN(%u)", mtype_list[iter]);
+Index: netlabelctl/map.c
+===================================================================
+--- netlabelctl/map.c	(revision 27)
++++ netlabelctl/map.c	(revision 28)
+@@ -224,8 +224,10 @@
+         printf("UNKNOWN(%u)", domain_p[iter].proto_type);
+         break;
+       }
+-      printf(" ");
++      if (iter + 1 < count)
++	printf(" ");
+     }
++    printf("\n");
+   }
+ 
+  list_return:
