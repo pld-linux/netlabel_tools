@@ -1,5 +1,5 @@
 Summary:	Tools to manage the Linux NetLabel subsystem
-Summary(pl.UTF-8):   Narzędzia do zarządzania linuksowym podsystemem NetLabel
+Summary(pl.UTF-8):	Narzędzia do zarządzania linuksowym podsystemem NetLabel
 Name:		netlabel_tools
 Version:	0.17
 Release:	0.1
