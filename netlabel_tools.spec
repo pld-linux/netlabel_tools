@@ -1,5 +1,5 @@
 Summary:	Tools to manage the Linux NetLabel subsystem
-Summary(pl):	Narzêdzia do zarz±dzania linuksowym podsystemem NetLabel
+Summary(pl.UTF-8):   NarzÄ™dzia do zarzÄ…dzania linuksowym podsystemem NetLabel
 Name:		netlabel_tools
 Version:	0.17
 Release:	0.1
@@ -23,13 +23,13 @@ attributes of the data they contain. This package provides the
 necessary user space tools to query and configure the kernel
 subsystem.
 
-%description -l pl
-NetLabel to podsystem j±dra implementuj±cy pod Linuksem protoko³y ze
-znakowaniem pakietów wprost, takie jak CIPSO czy RIPSO. Znakowanie
-pakietów jest u¿ywane w bezpiecznych sieciach do oznaczania pakietów
-atrybutami bezpieczeñstwa okre¶laj±cymi dane, które zawieraj±. Ten
-pakiet udostêpnia narzêdzie przestrzeni u¿ytkownika potrzebne do
-odpytywania i konfigurowania podsystemu j±dra.
+%description -l pl.UTF-8
+NetLabel to podsystem jÄ…dra implementujÄ…cy pod Linuksem protokoÅ‚y ze
+znakowaniem pakietÃ³w wprost, takie jak CIPSO czy RIPSO. Znakowanie
+pakietÃ³w jest uÅ¼ywane w bezpiecznych sieciach do oznaczania pakietÃ³w
+atrybutami bezpieczeÅ„stwa okreÅ›lajÄ…cymi dane, ktÃ³re zawierajÄ…. Ten
+pakiet udostÄ™pnia narzÄ™dzie przestrzeni uÅ¼ytkownika potrzebne do
+odpytywania i konfigurowania podsystemu jÄ…dra.
 
 %prep
 %setup -q
