@@ -1,16 +1,15 @@
 Summary:	Tools to manage the Linux NetLabel subsystem
 Summary(pl.UTF-8):	Narzędzia do zarządzania linuksowym podsystemem NetLabel
 Name:		netlabel_tools
-Version:	0.17
-Release:	0.1
+Version:	0.19
+Release:	1
 License:	GPL
 Group:		Daemons
 Source0:	http://dl.sourceforge.net/netlabel/%{name}-%{version}.tar.gz
-# Source0-md5:	905ffd48714f48aaa34ecdc3c51d3dcb
+# Source0-md5:	f7a9f397e5bf2364676e2beba1a61beb
 Source1:	%{name}.init
 Source2:	%{name}.rules
 Patch1:		%{name}-new-hdrs.patch
-Patch2:		%{name}.patch
 URL:		http://netlabel.sourceforge.net/
 BuildRequires:	libnl-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,10 +33,10 @@ odpytywania i konfigurowania podsystemu jądra.
 %prep
 %setup -q
 %patch1 -p1
-%patch2 -p0
 
 %build
-%{__make}
+%{__make} -j1 \
+	CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
