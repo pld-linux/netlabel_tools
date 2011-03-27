@@ -2,7 +2,7 @@ Summary:	Tools to manage the Linux NetLabel subsystem
 Summary(pl.UTF-8):	Narzędzia do zarządzania linuksowym podsystemem NetLabel
 Name:		netlabel_tools
 Version:	0.19
-Release:	1
+Release:	2
 License:	GPL
 Group:		Daemons
 Source0:	http://dl.sourceforge.net/netlabel/%{name}-%{version}.tar.gz
